@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Final.MainPage">
+    <Grid>
+        <Image
+        Source="{Binding BackgroundImagePath}"
+        Aspect="AspectFit"/>
+        <ScrollView>
+            <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+                <Image
+                Source="lol_logo_flat_gold.png"
+                HeightRequest="185"
+                Aspect="AspectFit"/>
+                <Border 
+                Stroke="#401E2328"
+                StrokeThickness="2"
+                StrokeShape="RoundRectangle 5,5,5,5"
+                Background="#401E2328"
+                Padding="0"
+                HorizontalOptions="Center">
+
+                    <HorizontalStackLayout
+                Padding="0"
+                Spacing="10"
+                HorizontalOptions="Center">
+                        <Picker 
+                        x:Name="picker"
+                        Title="Select a Region"
+                        TextColor="Beige"   
+                        FontFamily="SpiegelTTRegular"
+                        TitleColor="Beige"    
+                        FontSize="14"     
+                        SelectedItem="{Binding Region}"
+                        HorizontalOptions="Center">
+                            <Picker.ItemsSource>
+                                <x:Array Type="{x:Type x:String}">
+                                    <x:String>BR1</x:String>
+                                    <x:String>EUN1</x:String>
+                                    <x:String>EUW1</x:String>
+                                    <x:String>JP1</x:String>
+                                    <x:String>KR</x:String>
+                                    <x:String>LA1</x:String>
+                                    <x:String>LA2</x:String>
+                                    <x:String>NA1</x:String>
+                                    <x:String>RU</x:String>
+                                    <x:String>TR1</x:String>
+                                </x:Array>
+                            </Picker.ItemsSource>
+                        </Picker>
+                        <Entry 
+                        x:Name="entry"
+                        Placeholder="Gamename#Tagline"
+                        TextColor="Beige"    
+                        FontFamily="SpiegelTTRegular"
+                        FontSize="14"
+                        ReturnType="Send"
+                        Text="{Binding GameNameandTag,Mode=TwoWay}"
+                        ReturnCommand="{Binding SetImageCommand}"
+                        HorizontalOptions="Center"/>
+                    </HorizontalStackLayout>
+                </Border>
+                <Label 
+                Text="{Binding Error}" 
+                FontFamily="SpiegelTTBold"
+                TextColor="Red"
+                FontSize="14"
+                HorizontalOptions="Center"/>
+                <Border 
+                Stroke="#80C89B3C"
+                StrokeThickness="2"
+                Opacity="{Binding Opacity}"
+                StrokeShape="RoundRectangle 5,5,5,5"
+                Background="#CC1E2328"
+                Padding="10"
+                HorizontalOptions="Center">
+                    <HorizontalStackLayout
+                    Padding="0"
+                    Spacing="20"
+                    HorizontalOptions="Center">
+                        <Label 
+                        Text="{Binding WinText}" 
+                        FontFamily="BeaufortforLOL-Bold"
+                        TextColor="{Binding WinColor}"
+                        FontSize="45"
+                        HorizontalOptions="Center"/>
+
+                        <HorizontalStackLayout
+                        Padding="0"
+                        Spacing="5"
+                        HorizontalOptions="Center">
+                            <ImageButton
+                             Source="{Binding Item0ImagePath}"
+                             Command="{Binding SetLabelItem0Command}"  
+                             Aspect="Fill"
+                             HeightRequest="60"
+                             WidthRequest="60"
+                             BorderWidth="1"   
+                             BorderColor="#80C89B3C"
+                             Background="#001E2328"   
+                             IsEnabled="{Binding Enable_Button}"/>
+
+                            <ImageButton
+                            Source="{Binding Item1ImagePath}"
+                            Command="{Binding SetLabelItem1Command}"    
+                            Aspect="Fill"
+                            HeightRequest="60"
+                            WidthRequest="60"
+                            BorderWidth="1"   
+                            BorderColor="#80C89B3C"
+                            Background="#001E2328"   
+                            IsEnabled="{Binding Enable_Button}"/>
+
+                            <ImageButton
+                            Source="{Binding Item2ImagePath}"
+                            Command="{Binding SetLabelItem2Command}"    
+                            Aspect="Fill"
+                            HeightRequest="60"
+                            WidthRequest="60"
+                            BorderWidth="1"   
+                            BorderColor="#80C89B3C"    
+                            Background="#001E2328"    
+                            IsEnabled="{Binding Enable_Button}"/>
+
+                            <ImageButton
+                            Source="{Binding Item3ImagePath}"
+                            Command="{Binding SetLabelItem3Command}"    
+                            Aspect="Fill"
+                            HeightRequest="60"
+                            WidthRequest="60"
+                            BorderWidth="1"   
+                            BorderColor="#80C89B3C"                                   
+                            Background="#001E2328"    
+                            IsEnabled="{Binding Enable_Button}"/>
+
+                            <ImageButton
+                            Source="{Binding Item4ImagePath}"
+                            Command="{Binding SetLabelItem4Command}"    
+                            Aspect="Fill"
+                            HeightRequest="60"
+                            WidthRequest="60"
+                            BorderWidth="1"   
+                            BorderColor="#80C89B3C"                                   
+                            Background="#001E2328"    
+                            IsEnabled="{Binding Enable_Button}"/>
+
+                            <ImageButton
+                            Source="{Binding Item5ImagePath}"
+                            Command="{Binding SetLabelItem5Command}"    
+                            Aspect="Fill"
+                            HeightRequest="60"
+                            WidthRequest="60"
+                            BorderWidth="1"   
+                            BorderColor="#80C89B3C"                                   
+                            Background="#001E2328"    
+                            IsEnabled="{Binding Enable_Button}"/>
+
+                            <ImageButton
+                            Source="{Binding Item6ImagePath}"
+                            Command="{Binding SetLabelItem6Command}"                          
+                            Aspect="Fill"
+                            HeightRequest="60"
+                            WidthRequest="60"
+                            BorderWidth="1"   
+                            BorderColor="#80C89B3C"                                   
+                            Background="#001E2328"    
+                            IsEnabled="{Binding Enable_Button}"/>
+
+                        </HorizontalStackLayout>
+                    </HorizontalStackLayout>
+                </Border>
+                <Border 
+                Stroke="#00C89B3C"
+                StrokeThickness="2"
+                Opacity="{Binding Opacity}"
+                StrokeShape="RoundRectangle 5,5,5,5"
+                Background="#001E2328"
+                Padding="10"
+                HorizontalOptions="Center">
+                    <ImageButton
+                     Source="{Binding RankImagePath}"
+                     Command="{Binding SetLabelRankCommand}"
+                     HeightRequest="160"
+                     WidthRequest="160"
+                     Aspect="AspectFit"
+                     HorizontalOptions="Center"
+                     Background="#001E2328"
+                     IsEnabled="{Binding Enable_Button}"
+                     IsOpaque="True"/>
+                </Border>
+                <Border 
+                Stroke="#80C89B3C"
+                StrokeThickness="2"
+                Opacity="{Binding Opacity}"
+                StrokeShape="RoundRectangle 5,5,5,5"
+                Background="#CC1E2328"
+                Padding="16,8"
+                HorizontalOptions="Center">
+                    <Label 
+                    Text="{Binding Response}" 
+                    TextColor="Beige"       
+                    FontFamily="SpiegelTTRegular"
+                    FontSize="14"
+                    HorizontalOptions="Center"/>
+                </Border>
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>
