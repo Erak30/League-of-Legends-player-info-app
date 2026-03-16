@@ -6,4 +6,4 @@ A League of Legends match viewer that retrieves a player's latest match data usi
 
 # Setup
 
-To make this project work you need to replace the Riot API key with your own developer API key you can generate from the Riot Developer Portal.
+To test this project  you need to put in your own developer API key you can generate from the Riot Developer Portal. In the models folder there is a file called Key.cs, within this file place your key, you should now be able to run the app.
